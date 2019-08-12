@@ -1,1 +1,0 @@
-This is my portfolio created in React and hosted on github pages. [Please visit site here.](https://basktballer.github.io/) 
