@@ -26,9 +26,9 @@ class App extends Component {
     this.projectGHNames.forEach( (elm, index) => {
 
       fetch(`https://api.github.com/repos/basktballer/${elm}`, {
-        headers: {
-          Authorization: "Basic YmFza3RiYWxsZXI6NTU0MzY4Y2Y3MWM5ZGQ3MWQwMGUxMDIwMzQzODYzMDIzMTc1NjVmYw=="
-        }
+        // headers: {
+        //   Authorization: "Basic YmFza3RiYWxsZXI6NTU0MzY4Y2Y3MWM5ZGQ3MWQwMGUxMDIwMzQzODYzMDIzMTc1NjVmYw=="
+        // }
       })
       .then(response => response.json())
       .then(data => {
@@ -36,9 +36,9 @@ class App extends Component {
         repocontent.push({data})
         this.setState({ repocontent })
         return fetch(`https://api.github.com/repos/basktballer/${elm}/contents/docs`, {
-          headers: {
-            Authorization: "Basic YmFza3RiYWxsZXI6NTU0MzY4Y2Y3MWM5ZGQ3MWQwMGUxMDIwMzQzODYzMDIzMTc1NjVmYw=="
-          }
+          // headers: {
+          //   Authorization: "Basic YmFza3RiYWxsZXI6NTU0MzY4Y2Y3MWM5ZGQ3MWQwMGUxMDIwMzQzODYzMDIzMTc1NjVmYw=="
+          // }
         })
       })
       .then(response => response.json())
