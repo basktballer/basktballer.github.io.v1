@@ -124,17 +124,19 @@ class App extends Component {
 
         <div id="projects" className="container">
           <h4 className="sectionHeader">List of Web Development Projects</h4>
+            <h3>Which Project do you want to see?</h3>
+            <br/>
             <ul className="content">
-            {this.projectOrder.map((v, i)=>{
-              return (
-                <li key={i} onClick={()=>this.handleClickChangeProject(i)} >                
-                  {v}
-                </li>)
-            })}
+              {this.projectOrder.map((v, i)=>{
+                return (
+                  <li key={i} href='/#projects' onClick={()=>this.handleClickChangeProject(i)} >                
+                    {v}
+                  </li>)
+              })}
             </ul>
         </div>
 
-        <Card screenshots={this.state.screenshots[this.state.showproject]} repocontent={this.state.repocontent[this.state.showproject]}/> 
+        <Card altName={this.projectOrder[this.state.showproject]}screenshots={this.state.screenshots[this.state.showproject]} repocontent={this.state.repocontent[this.state.showproject]}/> 
 
       <br/>
       <br/>
