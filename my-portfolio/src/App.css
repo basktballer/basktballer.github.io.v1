@@ -1,24 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Orbitron|Prompt&display=swap');
+
+h1 {
+  font-size: 60px;
+  font-family: 'Liu Jian Mao Cao', cursive;
+}
+
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url("../public/background/cool-background2.png");
+  background-size:cover;
+  /* background-repeat:no-repeat; */
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.sectionHeader{
+  width: 100%;
+  font-size: 40px;
+  font-family: 'Liu Jian Mao Cao', cursive;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.container {
+  display:flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap:wrap;
 }
 
-.App-intro {
-  font-size: large;
+.content {
+  width: 50%;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.skills-ul {
+  text-align: left;
+  font-size: 25px;
+  font-family: 'Prompt', sans-serif;
+  color: #076cb0;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+.skills-li {
+  font-size: 18px;
+  color: black;
+  padding: 0 0 0 10px;
+  font-weight: normal;
 }

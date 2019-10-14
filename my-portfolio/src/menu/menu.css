@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
+
+.menu-expanded {
+  font-size: large;
+  font-family: 'Orbitron', cursive;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+  justify-content: flex-end;
+
+}
+
+.menu-expanded-item {
+  margin: 10px;
+}
