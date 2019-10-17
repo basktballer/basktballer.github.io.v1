@@ -1,6 +1,36 @@
 .card-frame {
-  border:soild black 1px;
-  align-content: center;
+  border:solid aliceblue 5px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self:center;
   justify-content: center;
-  background: white;
+  background: black;
+  width: 80%;
+  margin-top:20px;
+}
+
+.desc-frame {
+  width: 100%;
+}
+
+.project-headers{
+  padding: 0 50px;
+  text-align: left;
+  font-size: 20px;
+  font-family: 'Source Code Pro', monospace;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+  list-style-type: none;
+}
+
+.project-text {
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Source Code Pro', monospace;
+  color: white;
+  font-weight: bolder;
+  padding: 0 50px ;
 }

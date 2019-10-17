@@ -1,7 +1,6 @@
 .sliderContainer {
   padding: 20px;
-  width: 800px;
-  align-self: center;
+  width: 85%;
 }
 
 .screenshot {
@@ -9,11 +8,39 @@
   width: 100%;
 }
 
-.slick-prev::before,
-.slick-next::before {
-  color: black!important;
+.slick-next {
+  right: -50px!important;
 }
 
-.slider {
-  overflow: hidden;
+.slick-prev {
+  left: -50px!important;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  color: white!important;
+}
+
+.slick-slide img {
+  border: 5px #fff;
+  display: block;
+  margin: auto;
+}
+
+.slick-slider {
+  margin: 30px auto 50px;  
+}
+
+.slick-track {
+  display: flex;
+}
+.slick-track .slick-slide {
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-dots li button::before{
+  color:white!important;
 }

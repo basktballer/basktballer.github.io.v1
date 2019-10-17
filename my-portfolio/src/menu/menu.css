@@ -2,7 +2,7 @@
 
 .menu-expanded {
   font-size: large;
-  font-family: 'Orbitron', cursive;
+  font-family: 'Source Code Pro', monospace;
   display: flex;
   flex-direction: row;
   align-content: flex-end;

@@ -13,12 +13,14 @@ export default class Card extends Component {
       return(
         <div className="card-frame">
           <div className="desc-frame">
-            <h4>Currently Viewing</h4>
-            <p>{altName}</p>
-            <h4>Project Description</h4>
-            <p>{repocontent.data.description}</p>
+            <h4 class="project-headers">Currently Viewing:</h4>
+            <p class="project-text">{altName}</p>
+            <h4 class="project-headers">Project Description:</h4>
+            <p class="project-text">{repocontent.data.description}</p>
+            <a className="github-button" href={repocontent.data.html_url} target="_blank" >
+              <img src="https://icon-library.net/images/github-icon-png/github-icon-png-29.jpg" width="80px" height="80px" alt="View Project Repo" />
+            </a>
           </div>
-          <a className="menu-expanded-item" href={repocontent.data.html_url} target="_blank" >View Project Repo</a>
           <div className="sliderContainer">
             <SimpleSlider screenshots={screenshots.urls}></SimpleSlider>
           </div>

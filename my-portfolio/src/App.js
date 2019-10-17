@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import './menu/menu.css';
 import './card/react-slick carousel/carousel.css';
+import './card/card.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Menu from "./menu/menu";
@@ -14,7 +15,7 @@ class App extends Component {
     this.state = {
       screenshots:[],
       repocontent:[],
-        showproject: 0,
+      showproject: 0,
     }
     this.projectGHNames = ['lhl-final-project', 'TheWallMidterm', 'student-assessments', 'tweeter', 'tinyapp', 'Chatty'];
     this.projectAltName = ['Squabble Budgeting App', 'Resource Sharing Wall', 'Student Assessments React Front End', 'Tweeter', 'TinyApp', 'Chatty'];
@@ -26,9 +27,9 @@ class App extends Component {
     this.projectGHNames.forEach( (elm, index) => {
 
       fetch(`https://api.github.com/repos/basktballer/${elm}`, {
-        // headers: {
-        //   Authorization: "Basic YmFza3RiYWxsZXI6NTU0MzY4Y2Y3MWM5ZGQ3MWQwMGUxMDIwMzQzODYzMDIzMTc1NjVmYw=="
-        // }
+        headers: {
+          Authorization: "Basic YmFza3RiYWxsZXI6NTU0MzY4Y2Y3MWM5ZGQ3MWQwMGUxMDIwMzQzODYzMDIzMTc1NjVmYw=="
+        }
       })
       .then(response => response.json())
       .then(data => {
@@ -36,9 +37,9 @@ class App extends Component {
         repocontent.push({data})
         this.setState({ repocontent })
         return fetch(`https://api.github.com/repos/basktballer/${elm}/contents/docs`, {
-          // headers: {
-          //   Authorization: "Basic YmFza3RiYWxsZXI6NTU0MzY4Y2Y3MWM5ZGQ3MWQwMGUxMDIwMzQzODYzMDIzMTc1NjVmYw=="
-          // }
+          headers: {
+            Authorization: "Basic YmFza3RiYWxsZXI6NTU0MzY4Y2Y3MWM5ZGQ3MWQwMGUxMDIwMzQzODYzMDIzMTc1NjVmYw=="
+          }
         })
       })
       .then(response => response.json())
@@ -124,23 +125,25 @@ class App extends Component {
 
         <div id="projects" className="container">
           <h4 className="sectionHeader">List of Web Development Projects</h4>
-            <h3>Which Project do you want to see?</h3>
-            <br/>
-            <ul className="content">
+            <ul className="content projects-ul">
               {this.projectOrder.map((v, i)=>{
                 return (
-                  <li key={i} href='/#projects' onClick={()=>this.handleClickChangeProject(i)} >                
+                  <li key={i} href='/#projects' className="projects-li" onClick={()=>this.handleClickChangeProject(i)} >                
                     {v}
                   </li>)
               })}
             </ul>
         </div>
 
-        <Card altName={this.projectOrder[this.state.showproject]}screenshots={this.state.screenshots[this.state.showproject]} repocontent={this.state.repocontent[this.state.showproject]}/> 
+        <div id="viewer" className="container">
+          <h4 className="sectionHeader">Screenshot Viewer</h4>
+          <p className="projectHeader">Click on projects above to change view!</p>
+          <Card altName={this.projectOrder[this.state.showproject]}screenshots={this.state.screenshots[this.state.showproject]} repocontent={this.state.repocontent[this.state.showproject]}/> 
+        </div>
 
-      <br/>
-      <br/>
-      <br/>
+        <br/>
+        <br/>
+        <br/>
 
       </div>
     );

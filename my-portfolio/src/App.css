@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Orbitron|Prompt&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
 h1 {
   font-size: 60px;
@@ -32,6 +33,7 @@ h1 {
 .content {
   width: 50%;
   text-align: left;
+  font-size:25px;
 }
 
 .skills-ul {
@@ -48,4 +50,30 @@ h1 {
   color: black;
   padding: 0 0 0 10px;
   font-weight: normal;
+}
+
+.projects-li {
+  cursor: pointer;
+  margin: 15px;
+  text-decoration: underline;
+  font-style: italic;
+  font-size:25px;
+}
+
+.projects-ul {
+  list-style-type:none;
+  margin-top:0;
+}
+
+.projectHeader {
+  align-self:center;
+  font-size:25px;
+  margin-top:0;
+}
+
+#projects {
+  width: 85%;
+  flex-direction: column;
+  align-items:center;
+  align-self:center;
 }
