@@ -53,14 +53,8 @@ function App() {
 
     const fetchGithubInfo = async (url) => {
       const githubInfo = await axios(url, {
-        headers: {
-          Authorization: "token 93971f5b3b52a098dc77c2cc69cb455b318b2c74" 
-        }
       });
       const screens = await axios(url+'/contents/docs', {
-        headers: {
-          Authorization: "token 93971f5b3b52a098dc77c2cc69cb455b318b2c74"
-        }
       });
 
       return {
