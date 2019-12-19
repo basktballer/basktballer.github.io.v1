@@ -7,13 +7,26 @@
   align-self:center;
   justify-content: center;
   background: black;
-  width: 80%;
+  width: 70%;
   margin-top:20px;
 }
 
 .desc-frame {
+  display:flex;
+  flex-direction: column;
+  align-content:center;
+  justify-content: center;
   width: 100%;
 }
+
+.list-frame {
+  display:flex;
+  flex-direction: column;
+  align-content:center;
+  justify-content: center;
+  width: 100%;
+}
+
 
 .project-headers{
   padding: 0 50px;
@@ -33,4 +46,18 @@
   color: white;
   font-weight: bolder;
   padding: 0 50px ;
+}
+
+.project-nav {
+  display:flex;
+  flex-direction: row;
+  align-content:center;
+  justify-content: center;
+  width: 100%;
+}
+
+.github-button {
+  display:flex;
+  align-self: center;
+  margin: 0 400px;  
 }

@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Orbitron|Prompt&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
+html {
+  scroll-behavior: smooth !important;
+}
+
 h1 {
   font-size: 60px;
   font-family: 'Liu Jian Mao Cao', cursive;
@@ -13,7 +17,10 @@ h1 {
   justify-content: center;
   background: url("../public/background/cool-background2.png");
   background-size:cover;
-  /* background-repeat:no-repeat; */
+}
+
+.aboutIcons {
+  margin: 0 20px;
 }
 
 .sectionHeader{
@@ -30,8 +37,13 @@ h1 {
   flex-wrap:wrap;
 }
 
-.content {
+#about {
   width: 50%;
+  align-self: center;
+}
+
+.content {
+  width: 100%;
   text-align: left;
   font-size:25px;
 }
@@ -46,7 +58,7 @@ h1 {
 }
 
 .skills-li {
-  font-size: 18px;
+  font-size: 25px;
   color: black;
   padding: 0 0 0 10px;
   font-weight: normal;
@@ -56,19 +68,21 @@ h1 {
   cursor: pointer;
   margin: 15px;
   text-decoration: underline;
-  font-style: italic;
   font-size:25px;
 }
 
 .projects-ul {
   list-style-type:none;
+  font-family: 'Prompt', sans-serif;
   margin-top:0;
+  width: 50%;
 }
 
 .projectHeader {
   align-self:center;
   font-size:25px;
   margin-top:0;
+  width: 100%;
 }
 
 #projects {
@@ -76,4 +90,10 @@ h1 {
   flex-direction: column;
   align-items:center;
   align-self:center;
+}
+
+.footer {
+  align-self: center;
+  font-size: 18px;
+  margin:0;
 }

@@ -4,8 +4,9 @@
 }
 
 .screenshot {
-  height: 800px;
   width: 100%;
+  max-height: 800px;
+  object-fit: contain;
 }
 
 .slick-next {
@@ -36,11 +37,20 @@
 }
 .slick-track .slick-slide {
   display: flex;
-  height: auto;
-  align-items: center;
+  width: 100%;
+  max-height: 800px;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .slick-dots li button::before{
   color:white!important;
 }
+
+/* .slick-slide {
+  width: 100%;
+}
+
+.featured {
+  width: 100%;
+} */
