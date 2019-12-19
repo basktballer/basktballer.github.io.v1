@@ -52,10 +52,8 @@ function App() {
   useEffect(() => {
 
     const fetchGithubInfo = async (url) => {
-      const githubInfo = await axios(url, {
-      });
-      const screens = await axios(url+'/contents/docs', {
-      });
+      const githubInfo = await axios.get(url);
+      const screens = await axios.get(url+'/contents/docs');
 
       return {
         githubInfo: githubInfo.data,
