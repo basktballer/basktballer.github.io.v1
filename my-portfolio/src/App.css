@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Orbitron|Prompt&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
-html {
-  scroll-behavior: smooth !important;
+#about {
+  /* margin-top: 80px; */
+  width: 50%;
+  align-self: center;
 }
 
-h1 {
-  font-size: 60px;
-  font-family: 'Liu Jian Mao Cao', cursive;
+.aboutIcons {
+  margin: 0 20px;
 }
 
 .App {
@@ -19,14 +20,47 @@ h1 {
   background-size:cover;
 }
 
-.aboutIcons {
-  margin: 0 20px;
+.active, .collapsible:hover {
+  background-color: #ccc;
 }
 
-.sectionHeader{
-  width: 100%;
-  font-size: 40px;
-  font-family: 'Liu Jian Mao Cao', cursive;
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 80%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-size: 20px;
+  font-family: 'Prompt', sans-serif;
+  color: #076cb0;
+  font-weight: bold;
+}
+
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.collapsible-skills {
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  width: 80%;
 }
 
 .container {
@@ -37,38 +71,62 @@ h1 {
   flex-wrap:wrap;
 }
 
-#about {
-  width: 50%;
-  align-self: center;
+.container::before {
+  content: "";
+  display: block;
+  height: 60px;
+  width: 80px;
+  /* background-color: yellow; */
 }
 
 .content {
   width: 100%;
   text-align: left;
-  font-size:25px;
+  font-size:18px;
+}
+
+.footer {
+  align-self: center;
+  font-size: 18px;
+  margin:0;
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+.icons-container {
+  margin-top: 10px;
+}
+
+.sectionHeader{
+  width: 100%;
+  font-size: 40px;
+  font-family: 'Liu Jian Mao Cao', cursive;
+  margin-bottom: 9px;
+}
+
+.skills-li {
+  font-size: 20px;
+  color: black;
+  padding: 0 0 0 10px;
+  font-weight: normal;
 }
 
 .skills-ul {
   text-align: left;
-  font-size: 25px;
+  font-size: 20px;
   font-family: 'Prompt', sans-serif;
   color: #076cb0;
   font-weight: bold;
   list-style-type: none;
 }
 
-.skills-li {
-  font-size: 25px;
-  color: black;
-  padding: 0 0 0 10px;
-  font-weight: normal;
-}
-
 .projects-li {
   cursor: pointer;
   margin: 15px;
   text-decoration: underline;
-  font-size:25px;
+  font-size:20px;
 }
 
 .projects-ul {
@@ -78,13 +136,6 @@ h1 {
   width: 50%;
 }
 
-.projectHeader {
-  align-self:center;
-  font-size:25px;
-  margin-top:0;
-  width: 100%;
-}
-
 #projects {
   width: 85%;
   flex-direction: column;
@@ -92,8 +143,28 @@ h1 {
   align-self:center;
 }
 
-.footer {
-  align-self: center;
-  font-size: 18px;
-  margin:0;
+.projectHeader {
+  align-self:center;
+  font-size:25px;
+  margin-top:0;
+  width: 100%;
+}
+
+.skills-standard {
+  display:flex;    
+}
+
+.skills-smfmt {
+  display:none;
+}
+
+@media screen and (max-width: 1300px) {
+  .skills-standard {
+    display: none;    
+  }
+
+  .skills-smfmt {
+    display:flex;
+  }
+  
 }

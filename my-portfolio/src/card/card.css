@@ -19,6 +19,22 @@
   width: 100%;
 }
 
+.github-button {
+  display:flex;
+  align-self: center;
+  margin: 0 100px;  
+}
+
+.help-text {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Source Code Pro', monospace;
+  color: white;
+  font-weight: bolder;
+  padding: 0 50px ;
+  display:none;
+}
+
 .list-frame {
   display:flex;
   flex-direction: column;
@@ -27,10 +43,8 @@
   width: 100%;
 }
 
-
 .project-headers{
   padding: 0 50px;
-  text-align: left;
   font-size: 20px;
   font-family: 'Source Code Pro', monospace;
   color: white;
@@ -39,25 +53,24 @@
   list-style-type: none;
 }
 
-.project-text {
-  text-align: center;
-  font-size: 25px;
-  font-family: 'Source Code Pro', monospace;
-  color: white;
-  font-weight: bolder;
-  padding: 0 50px ;
-}
-
 .project-nav {
   display:flex;
   flex-direction: row;
   align-content:center;
   justify-content: center;
   width: 100%;
+  margin-bottom: 60px;
+
 }
 
-.github-button {
-  display:flex;
-  align-self: center;
-  margin: 0 400px;  
+@media screen and (max-width: 1400px) {
+  .card-frame {
+    width: 90%;
+  }  
+}
+
+@media screen and (max-width: 1050px) {
+  .help-text {
+    display: block;
+  }  
 }

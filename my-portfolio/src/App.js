@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Menu from "./menu/menu";
 import Card from "./card/card";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import cv from './cv.png';
 
 // import the library
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -49,6 +50,18 @@ function App() {
     }
   };
 
+  const toggleCollapsible = (event) => {
+    let panel = event.target.nextElementSibling;
+    
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+    
+    event.target.classList.toggle("active");
+  }
+
   useEffect(() => {
 
     const fetchGithubInfo = async (url) => {
@@ -78,22 +91,17 @@ function App() {
     fetchData(projectGHNames)
     .then(data => {
 
-      console.log("data", data)
-
       data.forEach((elm, index) => {
 
         setRepocontent(oldcontent =>[...oldcontent, elm.githubInfo ]);
         // console.log("This is the reporesult", elm.githubInfo);
   
         let urls = [];
-        console.log("This is the ssResult.json", elm.screens);
         elm.screens.forEach( d => {
-          console.log("THis is the d ", d)
           urls.push(d.download_url)
         });
         setScreenshots(oldscreens => [...oldscreens, urls]);
         setProjectorder(oldprojects => [...oldprojects, projectAltName[index]]);
-        console.log("This is project alt name", projectAltName[index], projectorder)
       })
 
     })
@@ -105,7 +113,7 @@ function App() {
   return (
     <div className="App">
       <Menu/>
-      <h1 id="name">Eden Yeung</h1>
+      {/* <h1 id="name">Eden Yeung</h1> */}
       <div id="about" className="container">
         <h2 className="sectionHeader">About</h2>
         <p className="content">
@@ -114,10 +122,9 @@ function App() {
         </p>
         <p className="content">
           With my diverse background, I am an eager and quick learner, not afraid of challenges and willing to take ownership. 
-          Currently working on refactoring Squabble Budget Splitting project to use React hooks to make code more efficient and logical. 
-          Personal portfolio website is a work in progress - next step viewport size optimization. 
+          Currently working on refactoring the Squabble Budgeting project to use React hooks to make code more efficient and logical. 
         </p>
-        <div id="icons">
+        <div className="icons-container">
           <a className="aboutIcons" href="mailto:edenstyeung@gmail.com" target="_blank">
             <FontAwesomeIcon icon={['fas', 'envelope']} color="black" size="3x" />
           </a>
@@ -127,50 +134,111 @@ function App() {
           <a className="aboutIcons" href="https://github.com/basktballer" target="_blank">
             <FontAwesomeIcon icon={['fab', 'github']} color="black" size="3x" />
           </a>
+          <a className="aboutIcons" href="https://resume.creddle.io/resume/d7158k02e3m" target="_blank" >
+              <img src={cv} width="40px" height="40px"  alt="Link to online CV" />
+            </a>
         </div>
 
       </div>
 
-      <div id="skills" className="container">
-        <h2 className="sectionHeader">Skills</h2>
-        <ul className="skills-ul">Programming Languages
-          <li className="skills-li">Javascript</li>
-          <li className="skills-li">Ruby</li>
-          <li className="skills-li">HTML</li>
-          <li className="skills-li">CSS</li>
-          <li className="skills-li">C#</li>
-          <li className="skills-li">RAPID</li>
-          <li className="skills-li">C++</li>
-          <li className="skills-li">C</li>
-        </ul>
-        <ul className="skills-ul">Frameworks, Libraries, Environments
-          <li className="skills-li">NodeJS</li>
-          <li className="skills-li">React</li>
-          <li className="skills-li">Rails</li>
-          <li className="skills-li">Ajax</li>
-          <li className="skills-li">Express</li>
-          <li className="skills-li">Knex</li>
-          <li className="skills-li">EJS</li>
-          <li className="skills-li">JQuery</li>
-          <li className="skills-li">Bootstrap</li>
-          <li className="skills-li">ActiveRecord</li>
-          <li className="skills-li">WebSockets</li>
-        </ul>
-        <ul className="skills-ul">Databases, Systems, CMS
-          <li className="skills-li">SQL</li>
-          <li className="skills-li">MongoDB</li>
-          <li className="skills-li">Git</li>
-        </ul>
-        <ul className="skills-ul">Application Software
-          <li className="skills-li">Visual Studio</li>
-          <li className="skills-li">Robot Studio</li>
-          <li className="skills-li">AutoCAD</li>
-          <li className="skills-li">MS Access</li>
-          <li className="skills-li">CAST Network Design</li>
-          <li className="skills-li">Excel</li>
-          <li className="skills-li">SAP</li>
-          <li className="skills-li">MS Office</li>
-        </ul>
+      <div id="skills">
+        <div className="skills-standard container">
+          <h2 className="sectionHeader">Skills</h2>
+          <ul className="skills-ul">Programming Languages
+            <li className="skills-li">Javascript</li>
+            <li className="skills-li">Ruby</li>
+            <li className="skills-li">HTML</li>
+            <li className="skills-li">CSS</li>
+            <li className="skills-li">Progress</li>
+            <li className="skills-li">C#</li>
+            <li className="skills-li">RAPID</li>
+            <li className="skills-li">C++</li>
+            <li className="skills-li">C</li>
+          </ul>
+          <ul className="skills-ul">Frameworks, Libraries, Environments
+            <li className="skills-li">NodeJS</li>
+            <li className="skills-li">React</li>
+            <li className="skills-li">Rails</li>
+            <li className="skills-li">Ajax</li>
+            <li className="skills-li">Express</li>
+            <li className="skills-li">Knex</li>
+            <li className="skills-li">EJS</li>
+            <li className="skills-li">JQuery</li>
+            <li className="skills-li">Bootstrap</li>
+            <li className="skills-li">ActiveRecord</li>
+            <li className="skills-li">WebSockets</li>
+          </ul>
+          <ul className="skills-ul">Databases, Systems, CMS
+            <li className="skills-li">SQL</li>
+            <li className="skills-li">MongoDB</li>
+            <li className="skills-li">Git</li>
+          </ul>
+          <ul className="skills-ul">Application Software
+            <li className="skills-li">Visual Studio</li>
+            <li className="skills-li">Robot Studio</li>
+            <li className="skills-li">AutoCAD</li>
+            <li className="skills-li">MS Access</li>
+            <li className="skills-li">CAST Network Design</li>
+            <li className="skills-li">Excel</li>
+            <li className="skills-li">SAP</li>
+            <li className="skills-li">MS Office</li>
+          </ul>
+        </div>
+        <div className="skills-smfmt container">
+          <h2 className="sectionHeader">Skills</h2>
+          <button className="collapsible" onClick={toggleCollapsible}>Programming Languages</button>
+          <div className="collapsible-skills">
+            <ul className="skills-ul">
+              <li className="skills-li">Javascript</li>
+              <li className="skills-li">Ruby</li>
+              <li className="skills-li">HTML</li>
+              <li className="skills-li">CSS</li>
+              <li className="skills-li">Progress</li>
+              <li className="skills-li">C#</li>
+              <li className="skills-li">RAPID</li>
+              <li className="skills-li">C++</li>
+              <li className="skills-li">C</li>
+            </ul>
+          </div>
+          <button className="collapsible" onClick={toggleCollapsible}>Frameworks, Libraries, Environments</button>
+          <div className="collapsible-skills">
+            <ul className="skills-ul">
+              <li className="skills-li">NodeJS</li>
+              <li className="skills-li">React</li>
+              <li className="skills-li">Rails</li>
+              <li className="skills-li">Ajax</li>
+              <li className="skills-li">Express</li>
+              <li className="skills-li">Knex</li>
+              <li className="skills-li">EJS</li>
+              <li className="skills-li">JQuery</li>
+              <li className="skills-li">Bootstrap</li>
+              <li className="skills-li">ActiveRecord</li>
+              <li className="skills-li">WebSockets</li>
+            </ul>
+          </div>
+          <button className="collapsible" onClick={toggleCollapsible}>Databases, Systems, CMS</button>
+          <div className="collapsible-skills">
+            <ul className="skills-ul">
+              <li className="skills-li">SQL</li>
+              <li className="skills-li">MongoDB</li>
+              <li className="skills-li">Git</li>
+            </ul>
+          </div>
+          <button className="collapsible" onClick={toggleCollapsible}>Application Software</button>
+          <div className="collapsible-skills">
+            <ul className="skills-ul">
+              <li className="skills-li">Visual Studio</li>
+              <li className="skills-li">Robot Studio</li>
+              <li className="skills-li">AutoCAD</li>
+              <li className="skills-li">MS Access</li>
+              <li className="skills-li">CAST Network Design</li>
+              <li className="skills-li">Excel</li>
+              <li className="skills-li">SAP</li>
+              <li className="skills-li">MS Office</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
 
       <div id="projects" className="container">
@@ -194,10 +262,10 @@ function App() {
 
       <br/>
       <br/>
-      <br/>
 
       <p className="footer">Eden Yeung 2019</p>
 
+      <br/>
       <br/>
       <br/>
 

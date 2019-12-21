@@ -1,26 +1,58 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
 
-.menu-expanded {
-  font-size: large;
-  font-family: 'Source Code Pro', monospace;
-  display: flex;
-  flex-direction: row;
-  align-content: flex-end;
-  justify-content: flex-end;
+#name {
+  font-size: 60px;
+  font-family: 'Liu Jian Mao Cao', cursive;
+  margin: 0 20px;
+}
 
+.name-div {
+  width:100%;
+}
+
+.menu-bar {
+  display:flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap:wrap;
+
+  height: 80px;
+  /* background-color:black; #f9fce3; */
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
   width: 100%;
-  height: 50px;
+
+}
+
+.menu-expanded {
+  font-size: 20px;
+  font-family: 'Source Code Pro', monospace;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
 
 }
 
 .menu-expanded-item {
-  margin: 10px;
+  margin: 25px;
+  padding: 5px;
+  text-decoration: none;
 }
 
 .menu-expanded-item:hover {
-  font-size: larger;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 850px) {
+  .menu-expanded-item {
+    display: none;    
+  }
+  
 }
