@@ -159,6 +159,10 @@ html {
 }
 
 @media screen and (max-width: 1300px) {
+  #about {
+    width: 80%;
+  }
+  
   .skills-standard {
     display: none;    
   }
